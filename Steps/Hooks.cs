@@ -1,4 +1,4 @@
-// using Allure.Commons;
+using Allure.Commons;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -11,12 +11,12 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
     public class Hooks
     {
         private readonly ScenarioContext _scenarioContext;
-        // public  AllureLifecycle _allureLifecycle;
+        public  AllureLifecycle _allureLifecycle;
 
         public Hooks(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
-            // _allureLifecycle = AllureLifecycle.Instance;
+            _allureLifecycle = AllureLifecycle.Instance;
         }
 
         // This step is implemented like a hook for UI tests only.
@@ -36,37 +36,27 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
         }
 
         [BeforeScenario]
-        //[Obsolete]
         public void BeforeFeature()
         {
-            // DriverClass driverClass = new DriverClass();
-            // IWebDriver driver = driverClass.StartDriver();
-
-            // _scenarioContext.Set(driverClass, "DriverClass");
-            // _scenarioContext.Set(driver, "Driver");
-
-            // LoginPage loginPage = new LoginPage(driver);
-            // _scenarioContext.Set(loginPage, "LoginPage");
 
         }
 
-        // [BeforeTestRun]
-        // public static void CleanAllureDirecory()
-        // {
-        //     AllureLifecycle.Instance.CleanupResultDirectory();
-        // }
+        [BeforeTestRun]
+        public static void CleanAllureDirecory()
+        {
+            AllureLifecycle.Instance.CleanupResultDirectory();
+        }
 
-        // [OneTimeSetUp]
-        // public void SetupForAllure()
-        // {
-        //     Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
-        // }
+        [OneTimeSetUp]
+        public void SetupForAllure()
+        {
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
+        }
 
         [AfterScenario]
         public void AfterFeature()
         {
             _scenarioContext.Get<DriverClass>("DriverClass").StopDriver();
-            //_scenarioContext.Get<ChromiumDriver>("WebDriver").Quit();
         }
     }
 }

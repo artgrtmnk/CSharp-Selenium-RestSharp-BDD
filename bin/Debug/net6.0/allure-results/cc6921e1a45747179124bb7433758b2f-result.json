@@ -1,0 +1,140 @@
+{
+  "uuid": "ddba9c9e2ce24786a44799eaa35f1ddb",
+  "historyId": "Invalid sign in with user1424698326",
+  "fullName": "Invalid sign in with user",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Artems-MacBook-Pro"
+    },
+    {
+      "name": "feature",
+      "value": "Login"
+    }
+  ],
+  "links": [],
+  "name": "Invalid sign in with user",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Text assertion error.\n  Expected: String containing \"Invalid username and/or password.\"\n  But was:  <string.Empty>\n",
+    "trace": "NUnit.Framework.AssertionException:   Text assertion error.\n  Expected: String containing \"Invalid username and/or password.\"\n  But was:  <string.Empty>\n\n   at NUnit.Framework.Assert.ReportFailure(String message)\n   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)\n   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)\n   at NUnit.Framework.StringAssert.Contains(String expected, String actual, String message, Object[] args)\n   at CSharp_Selenium_RestSharp_BDD.PageObjects.LoginPage.VerifyErrorMessage(String ErrorMsg) in /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/PageObjects/LoginPage.cs:line 48\n   at CSharp_Selenium_RestSharp_BDD.Steps.LoginSteps.ThenUserseesinvalidcredentialsmessage() in /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/Steps/LoginSteps.cs:line 48\n   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)\n   at Allure.SpecFlowPlugin.AllureBindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)\n   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan& duration)\n   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  User is using browser",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [
+        {
+          "name": "Browser",
+          "value": "chrome"
+        }
+      ],
+      "start": 1659452527965,
+      "stop": 1659452530199
+    },
+    {
+      "name": "Given  User has opened Oracle Profile page",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452530199,
+      "stop": 1659452533632
+    },
+    {
+      "name": "When  User inputs 'horus@herecy.com' as email",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452533632,
+      "stop": 1659452561917
+    },
+    {
+      "name": "And  User inputs 'grandpa_nurgle' as password",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452561918,
+      "stop": 1659452562105
+    },
+    {
+      "name": "And  User presses Sign In button",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452562105,
+      "stop": 1659452562268
+    },
+    {
+      "name": "Then  User sees invalid credentials message",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452562268,
+      "stop": 1659452565053
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "email",
+      "value": "horus@herecy.com"
+    },
+    {
+      "name": "password",
+      "value": "grandpa_nurgle"
+    }
+  ],
+  "start": 1659452527965,
+  "stop": 1659452565054
+}

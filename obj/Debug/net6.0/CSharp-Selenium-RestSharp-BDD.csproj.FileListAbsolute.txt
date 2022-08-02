@@ -119,3 +119,9 @@
 /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/SeleniumExtras.WaitHelpers.dll
 /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/Dynamitey.dll
 /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/SpecFlow.Assist.Dynamic.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/Allure.Commons.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/CsvHelper.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/MimeTypesMap.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/Allure.SpecFlowPlugin.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/allureConfig.json
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/specflow.json

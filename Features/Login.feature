@@ -2,8 +2,8 @@ Feature: Login
 
   Scenario Outline: Invalid sign in with user
     Given User is using browser
-            | Browser |
-		    | chrome  |
+            | Browser   |
+		    | chrome    |
     Given User has opened Oracle Profile page
     When User inputs '<email>' as email
     And User inputs '<password>' as password

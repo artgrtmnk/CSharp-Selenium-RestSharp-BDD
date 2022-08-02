@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Allure.Commons": {
+              "target": "Package",
+              "version": "[3.5.0.73, )"
+            },
             "DotNetSeleniumExtras.PageObjects": {
               "target": "Package",
               "version": "[3.11.0, )"
@@ -81,6 +85,10 @@
             "SpecFlow": {
               "target": "Package",
               "version": "[3.9.74, )"
+            },
+            "SpecFlow.Allure": {
+              "target": "Package",
+              "version": "[3.5.0.73, )"
             },
             "SpecFlow.Assist.Dynamic": {
               "target": "Package",

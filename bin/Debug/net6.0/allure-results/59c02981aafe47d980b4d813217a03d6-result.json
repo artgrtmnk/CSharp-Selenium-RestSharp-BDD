@@ -1,0 +1,138 @@
+{
+  "uuid": "061105c0b14b42d2a2c9296c5b8cdb71",
+  "historyId": "Invalid sign in with user-151724657",
+  "fullName": "Invalid sign in with user",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Artems-MacBook-Pro"
+    },
+    {
+      "name": "feature",
+      "value": "Login"
+    }
+  ],
+  "links": [],
+  "name": "Invalid sign in with user",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  User is using browser",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [
+        {
+          "name": "Browser",
+          "value": "chrome"
+        }
+      ],
+      "start": 1659452490250,
+      "stop": 1659452492748
+    },
+    {
+      "name": "Given  User has opened Oracle Profile page",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452492749,
+      "stop": 1659452494237
+    },
+    {
+      "name": "When  User inputs 'big@floppa.com' as email",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452494237,
+      "stop": 1659452513121
+    },
+    {
+      "name": "And  User inputs 'caracul' as password",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452513122,
+      "stop": 1659452513343
+    },
+    {
+      "name": "And  User presses Sign In button",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452513343,
+      "stop": 1659452513486
+    },
+    {
+      "name": "Then  User sees invalid credentials message",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452513487,
+      "stop": 1659452527878
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "email",
+      "value": "big@floppa.com"
+    },
+    {
+      "name": "password",
+      "value": "caracul"
+    }
+  ],
+  "start": 1659452490245,
+  "stop": 1659452527879
+}

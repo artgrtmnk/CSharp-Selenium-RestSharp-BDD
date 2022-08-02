@@ -1,0 +1,138 @@
+{
+  "uuid": "c4c6243f0cd94b3e9ef81a4c575e0dd5",
+  "historyId": "Invalid sign in with user-1038263378",
+  "fullName": "Invalid sign in with user",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "Artems-MacBook-Pro"
+    },
+    {
+      "name": "feature",
+      "value": "Login"
+    }
+  ],
+  "links": [],
+  "name": "Invalid sign in with user",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  User is using browser",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [
+        {
+          "name": "Browser",
+          "value": "chrome"
+        }
+      ],
+      "start": 1659452565119,
+      "stop": 1659452567585
+    },
+    {
+      "name": "Given  User has opened Oracle Profile page",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452567585,
+      "stop": 1659452573262
+    },
+    {
+      "name": "When  User inputs 'karen803@bench.com' as email",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452573262,
+      "stop": 1659452589347
+    },
+    {
+      "name": "And  User inputs 'remembermethecomplanyname' as password",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452589347,
+      "stop": 1659452589504
+    },
+    {
+      "name": "And  User presses Sign In button",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452589504,
+      "stop": 1659452589662
+    },
+    {
+      "name": "Then  User sees invalid credentials message",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1659452589662,
+      "stop": 1659452592919
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "email",
+      "value": "karen803@bench.com"
+    },
+    {
+      "name": "password",
+      "value": "remembermethecomplanyname"
+    }
+  ],
+  "start": 1659452565119,
+  "stop": 1659452592919
+}
