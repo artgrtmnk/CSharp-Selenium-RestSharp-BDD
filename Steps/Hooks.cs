@@ -1,6 +1,7 @@
 // using Allure.Commons;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 using CSharp_Selenium_RestSharp_BDD.Utils;
 using CSharp_Selenium_RestSharp_BDD.PageObjects;
 
@@ -18,18 +19,34 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
             // _allureLifecycle = AllureLifecycle.Instance;
         }
 
-        [BeforeScenario]
-        //[Obsolete]
-        public void BeforeFeature()
+        // This step is implemented like a hook for UI tests only.
+        [Given(@"User is using browser")]
+        public void GivenUserisusingbrowser(Table table)
         {
-            DriverClass driverClass = new DriverClass();
-            IWebDriver driver = driverClass.StartDriver();
+            dynamic data = table.CreateDynamicInstance();
+
+            DriverClass driverClass = new DriverClass(_scenarioContext);
+            IWebDriver driver = driverClass.StartDriver((string)data.Browser);
 
             _scenarioContext.Set(driverClass, "DriverClass");
             _scenarioContext.Set(driver, "Driver");
 
             LoginPage loginPage = new LoginPage(driver);
             _scenarioContext.Set(loginPage, "LoginPage");
+        }
+
+        [BeforeScenario]
+        //[Obsolete]
+        public void BeforeFeature()
+        {
+            // DriverClass driverClass = new DriverClass();
+            // IWebDriver driver = driverClass.StartDriver();
+
+            // _scenarioContext.Set(driverClass, "DriverClass");
+            // _scenarioContext.Set(driver, "Driver");
+
+            // LoginPage loginPage = new LoginPage(driver);
+            // _scenarioContext.Set(loginPage, "LoginPage");
 
         }
 

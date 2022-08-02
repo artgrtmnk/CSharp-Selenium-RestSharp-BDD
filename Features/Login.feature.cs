@@ -95,19 +95,26 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
             else
             {
                 this.ScenarioStart();
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Browser"});
+                table1.AddRow(new string[] {
+                            "chrome"});
 #line 4
-    testRunner.Given("User has opened Oracle Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 5
-    testRunner.When(string.Format("User inputs \'{0}\' as email", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 6
-    testRunner.And(string.Format("User inputs \'{0}\' as password", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("User is using browser", ((string)(null)), table1, "Given ");
 #line hidden
 #line 7
-    testRunner.And("User presses Sign In button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("User has opened Oracle Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
+    testRunner.When(string.Format("User inputs \'{0}\' as email", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+    testRunner.And(string.Format("User inputs \'{0}\' as password", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+    testRunner.And("User presses Sign In button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
     testRunner.Then("User sees invalid credentials message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

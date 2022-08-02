@@ -117,3 +117,5 @@
 /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/WebDriverManager.dll
 /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/SeleniumExtras.PageObjects.dll
 /Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/SeleniumExtras.WaitHelpers.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/Dynamitey.dll
+/Users/artem.gritsaenko/Documents/GitHub/CSharp-Selenium-RestSharp-BDD/bin/Debug/net6.0/SpecFlow.Assist.Dynamic.dll
