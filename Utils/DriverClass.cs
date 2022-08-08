@@ -9,30 +9,23 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils
 {
     public class DriverClass
     {
-        private IWebDriver Driver;
+        private IWebDriver _driver;
         public readonly ScenarioContext _scenarioContext;
         public DriverClass(ScenarioContext scenarioContext) => _scenarioContext = scenarioContext;
 
         public IWebDriver StartDriver(String browserName)
         {
-            // new DriverManager().SetUpDriver(new ChromeConfig());
-
-            // Driver = new ChromeDriver();
-
-            Driver = GetBrowser(browserName);
+            _driver = GetBrowser(browserName);
             
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            _driver.Manage().Window.Maximize();
 
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            Driver.Manage().Window.Maximize();
-
-            // _scenarioContext.Set(Driver, "WebDriver");
-
-            return Driver;
+            return _driver;
         }
 
         public void StopDriver()
         {
-            Driver.Quit();
+            _driver.Quit();
         }
 
         private dynamic GetBrowser(string browserName)
@@ -41,7 +34,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils
                 case "firefox":
                     {
                         new DriverManager().SetUpDriver(new FirefoxConfig());
-                        return new ChromeDriver();
+                        return new FirefoxDriver();
                     }
                 case "chrome":
                     {

@@ -1,16 +1,18 @@
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using SeleniumExtras.WaitHelpers;
 
 namespace CSharp_Selenium_RestSharp_BDD.PageObjects
 {
     public class LoginPage : BasePage
     {
         private readonly String BaseUrl = "https://profile.oracle.com/";
-        public LoginPage(IWebDriver Driver) : base(Driver)
+        public LoginPage(IWebDriver _driver) : base(_driver) 
         {
-            PageFactory.InitElements(Driver, this);
+            PageFactory.InitElements(_driver, this);
         }
 
+        // Elements
         [FindsBy(How = How.Id, Using = "sso_username")]
         private IWebElement UserNameField;
 
@@ -21,11 +23,12 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
         private IWebElement LoginButton;
 
         [FindsBy(How = How.Id, Using = "errormsg")]
-        private IWebElement ErrorMessage;
+        private IWebElement ErrorMessageText;
 
+        // Methods
         public void OpenPage() 
         {
-            Driver.Navigate().GoToUrl(BaseUrl);
+            _driver.Navigate().GoToUrl(BaseUrl);
         }
 
         public void FillUserNameField(string UserName)
@@ -45,7 +48,8 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
 
         public void VerifyErrorMessage(string ErrorMsg)
         {
-            StringAssert.Contains(ErrorMsg, ErrorMessage.Text, "Text assertion error.");
+            wait.Until(ExpectedConditions.TextToBePresentInElement(ErrorMessageText, ErrorMsg));
+            StringAssert.Contains(ErrorMsg, ErrorMessageText.Text, "Text assertion error.");
         }
     }
 }

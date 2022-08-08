@@ -23,6 +23,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
         [Given(@"User is using browser")]
         public void GivenUserisusingbrowser(Table table)
         {
+            // Driver initialization
             dynamic data = table.CreateDynamicInstance();
 
             DriverClass driverClass = new DriverClass(_scenarioContext);
@@ -31,8 +32,8 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
             _scenarioContext.Set(driverClass, "DriverClass");
             _scenarioContext.Set(driver, "Driver");
 
-            LoginPage loginPage = new LoginPage(driver);
-            _scenarioContext.Set(loginPage, "LoginPage");
+            // Page Objects
+            _scenarioContext.Set(new LoginPage(driver), "LoginPage");
         }
 
         [BeforeScenario]

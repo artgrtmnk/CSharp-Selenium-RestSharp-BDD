@@ -5,11 +5,13 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
 {
     public class BasePage
     {
-        protected IWebDriver Driver;
+        protected IWebDriver _driver;
+        protected WebDriverWait wait;
         
         public BasePage(IWebDriver Driver)
         {
-            this.Driver = Driver;
+            _driver = Driver;
+            wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
         }
 
         public void EnterText(IWebElement element, string text)
