@@ -7,10 +7,7 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
     public class LoginPage : BasePage
     {
         private readonly String BaseUrl = "https://profile.oracle.com/";
-        public LoginPage(IWebDriver _driver) : base(_driver) 
-        {
-            PageFactory.InitElements(_driver, this);
-        }
+        public LoginPage(IWebDriver _driver) : base(_driver) => PageFactory.InitElements(_driver, this);
 
         // Elements
         [FindsBy(How = How.Id, Using = "sso_username")]
