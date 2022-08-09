@@ -1,5 +1,6 @@
 Feature: Login
 
+  @ui
   Scenario Outline: Invalid sign in with user
     Given User is using browser
             | Browser   |

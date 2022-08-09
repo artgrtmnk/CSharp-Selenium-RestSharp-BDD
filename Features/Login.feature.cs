@@ -75,17 +75,24 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Invalid sign in with user")]
+        [NUnit.Framework.CategoryAttribute("ui")]
         [NUnit.Framework.TestCaseAttribute("big@floppa.com", "caracul", null)]
         [NUnit.Framework.TestCaseAttribute("horus@herecy.com", "grandpa_nurgle", null)]
         [NUnit.Framework.TestCaseAttribute("karen803@bench.com", "remembermethecomplanyname", null)]
         public void InvalidSignInWithUser(string email, string password, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "ui"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("email", email);
             argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid sign in with user", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 3
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,22 +106,22 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
                             "Browser"});
                 table1.AddRow(new string[] {
                             "chrome"});
-#line 4
+#line 5
     testRunner.Given("User is using browser", ((string)(null)), table1, "Given ");
 #line hidden
-#line 7
+#line 8
     testRunner.Given("User has opened Oracle Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 9
     testRunner.When(string.Format("User inputs \'{0}\' as email", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 10
     testRunner.And(string.Format("User inputs \'{0}\' as password", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 11
     testRunner.And("User presses Sign In button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 12
     testRunner.Then("User sees invalid credentials message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

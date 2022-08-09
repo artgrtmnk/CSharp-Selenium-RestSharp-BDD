@@ -57,7 +57,8 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
         [AfterScenario]
         public void AfterFeature()
         {
-            _scenarioContext.Get<DriverClass>("DriverClass").StopDriver();
+            if (_scenarioContext.ScenarioInfo.Tags.Contains("ui"))
+                _scenarioContext.Get<DriverClass>("DriverClass").StopDriver();
         }
     }
 }
