@@ -7,7 +7,7 @@ using KellermanSoftware.CompareNetObjects;
 	namespace CSharp_Selenium_RestSharp_BDD.Steps
 	{
 		[Binding]
-		public class RestSteps
+		public class RestSteps : BaseSteps
 		{
             private readonly ScenarioContext _scenarioContext;
             private RestApiClient _restApiClient;
@@ -67,7 +67,7 @@ using KellermanSoftware.CompareNetObjects;
                 Assert.AreEqual(expectedStatusCode, (int)response.StatusCode, "Wrong status code.");
             }
             
-            [Then(@"Response contains (.*)")]
+            [Then(@"Response contains '(.*)'")]
             public void ThenResponsecontainsid(string expectedContains)
             {
                 Assert.True(response.Content.Contains(expectedContains), "Body of the response doesn't match the expected one."); 

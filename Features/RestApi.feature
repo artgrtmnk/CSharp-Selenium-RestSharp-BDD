@@ -1,4 +1,5 @@
 @api
+@rest
 Feature: GoRest Rest API
 
   Background:
@@ -11,7 +12,7 @@ Feature: GoRest Rest API
   Scenario: 2: Create new user
     When I send a Post create user request
     Then Response code is 201
-    And Response contains "id"
+    And Response contains '"id"'
     And I save user id
 
   Scenario: 3: Get created user data
@@ -25,7 +26,7 @@ Feature: GoRest Rest API
       { "name": "Donald Duck" }
       """
     Then Response code is 200
-    And Response contains "Donald Duck"
+    And Response contains '"Donald Duck"'
 
   Scenario: 5: Delete created user
     When I send a Delete user request
