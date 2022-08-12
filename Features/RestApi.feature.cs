@@ -85,15 +85,13 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get user list")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void GetUserList()
+        [NUnit.Framework.DescriptionAttribute("1: Get user list")]
+        public void _1GetUserList()
         {
-            string[] tagsOfScenario = new string[] {
-                    "wip"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get user list", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1: Get user list", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 7
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -106,10 +104,10 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-#line 9
+#line 8
     testRunner.When("I send a Get user list request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 9
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -117,13 +115,13 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create new user")]
-        public void CreateNewUser()
+        [NUnit.Framework.DescriptionAttribute("2: Create new user")]
+        public void _2CreateNewUser()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new user", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2: Create new user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 11
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -136,16 +134,16 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-#line 13
+#line 12
     testRunner.When("I send a Post create user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 13
     testRunner.Then("Response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 15
-    testRunner.And("Response contains \'id\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+    testRunner.And("Response contains \"id\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 15
     testRunner.And("I save user id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -153,13 +151,13 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get created user data")]
-        public void GetCreatedUserData()
+        [NUnit.Framework.DescriptionAttribute("3: Get created user data")]
+        public void _3GetCreatedUserData()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get created user data", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3: Get created user data", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 17
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -172,27 +170,27 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-#line 19
+#line 18
     testRunner.When("I send a Get created user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 19
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 21
-    testRunner.And("Response contains correct user info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+    testRunner.And("Response body contains correct user info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Change created user details")]
-        public void ChangeCreatedUserDetails()
+        [NUnit.Framework.DescriptionAttribute("4: Change created user details")]
+        public void _4ChangeCreatedUserDetails()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change created user details", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 23
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4: Change created user details", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 22
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -205,27 +203,27 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-#line 24
+#line 23
     testRunner.When("I send a Patch user request with body", "{ \"name\": \"Donald Duck\" }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 27
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 29
-    testRunner.And("Response contains \'Donald Duck\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+    testRunner.And("Response contains \"Donald Duck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delete created user")]
-        public void DeleteCreatedUser()
+        [NUnit.Framework.DescriptionAttribute("5: Delete created user")]
+        public void _5DeleteCreatedUser()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete created user", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 31
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5: Delete created user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 30
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -238,10 +236,10 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-#line 32
+#line 31
     testRunner.When("I send a Delete user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 32
     testRunner.Then("Response code is 204", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -249,13 +247,13 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify that user was deleted")]
-        public void VerifyThatUserWasDeleted()
+        [NUnit.Framework.DescriptionAttribute("6: Verify that user was deleted")]
+        public void _6VerifyThatUserWasDeleted()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that user was deleted", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 35
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6: Verify that user was deleted", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 34
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -268,10 +266,10 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-#line 36
+#line 35
     testRunner.When("I send a Get created user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 36
     testRunner.Then("Response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
