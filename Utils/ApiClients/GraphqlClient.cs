@@ -13,9 +13,20 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
                                             .AddHeader("Authorization", "Bearer " + s_Token)
                                             .AddHeader("Content-Type", "application/json");
 
-        public RestResponse SendGqlRequest(string query) 
+        public RestResponse SendGqlRequest(string query, UserPoco userPoco) 
         {
-            return _restClient.ExecuteGet(BaseSpec.AddBody(query));
+            DefaultDataValidator defaultDataValidator = new DefaultDataValidator();
+            query = query.Replace("\n", "").Replace("\r", "");
+            query = defaultDataValidator.CheckForDefaultData(query, userPoco);
+
+            return _restClient.ExecutePost(BaseSpec.AddBody(query));
+        }
+
+        public void ParseUserFromResponse(RestResponse restResponse, UserPoco userPoco)
+        {
+            var jjj = JsonConvert.DeserializeObject(restResponse.Content);
+            Console.WriteLine(jjj.ToString());
+            //return jjj.data.createUser.user;
         }
     }
 }

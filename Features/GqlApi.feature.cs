@@ -82,7 +82,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 5
   #line hidden
 #line 6
-    testRunner.Given("GQL Given I set up a basic url as \'https://gorest.co.in/public/v2/graphql\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("GQL I set up a basic url as \'https://gorest.co.in/public/v2/graphql\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
@@ -109,7 +109,9 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
   this.FeatureBackground();
 #line hidden
 #line 10
-    testRunner.When("I send a GQL request with body", @"      ""query  {
+    testRunner.When("I send a GQL request with body", @"{
+  ""query"":
+      ""query  {
           users {
               pageInfo {
                   endCursor 
@@ -125,13 +127,14 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
                   status
               }
           }
-      }""", ((TechTalk.SpecFlow.Table)(null)), "When ");
+      }""
+  }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 33
     testRunner.Then("GQL Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
-    testRunner.But("Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+#line 34
+    testRunner.But("GQL Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -139,12 +142,14 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("2: Create a new user using GraphQL")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void _2CreateANewUserUsingGraphQL()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2: Create a new user using GraphQL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 33
+#line 37
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -157,35 +162,38 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 5
   this.FeatureBackground();
 #line hidden
-#line 34
-    testRunner.When("I send a GQL request with body", @"      mutation{
-          createUser(input: {
-              name: ""Default User""
-              gender: ""male""
-              email: ""default_email@gmail.com""
-              status: ""active""
-          }) 
-          {
-              user {
-                  id 
-                  name 
-                  gender 
-                  email 
-                  status
+#line 38
+    testRunner.When("I send a GQL request with body", @"  {
+      ""query"":
+          ""mutation{
+              createUser(input: {
+                  name: \""Default User\"" 
+                  gender: \""male\"" 
+                  email: \""default_email@gmail.com\"" 
+                  status: \""active\""
+              }) 
+              {
+                  user {
+                      id 
+                      name 
+                      gender 
+                      email 
+                      status
+                  }
               }
-          }
-      }", ((TechTalk.SpecFlow.Table)(null)), "When ");
+          }""
+  }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 54
-    testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+    testRunner.Then("GQL Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 55
-    testRunner.And("Response contains \'\"id\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+    testRunner.And("GQL Response contains \'\"id\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 56
-    testRunner.But("Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+#line 63
+    testRunner.But("GQL Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
-#line 57
+#line 64
     testRunner.And("GQL I save user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -199,7 +207,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3: Get created user data using GraphQL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 59
+#line 66
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -212,18 +220,18 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 5
   this.FeatureBackground();
 #line hidden
-#line 60
+#line 67
     testRunner.When("I send a GQL request with body", "      query{\n          user(id: 99999) { \n              id \n              name \n " +
                         "             email \n              gender \n              status \n          }\n    " +
                         "  }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 72
+#line 79
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 73
+#line 80
     testRunner.And("GQL Response contains correct user info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 74
+#line 81
     testRunner.But("Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             }
@@ -237,7 +245,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4: Change created user details using GraphQL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 76
+#line 83
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -250,7 +258,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 5
   this.FeatureBackground();
 #line hidden
-#line 77
+#line 84
     testRunner.When("I send a GQL request with body", @"      mutation{
           updateUser(input: {
                   id: 99999 
@@ -267,13 +275,13 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
           }
       }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 95
+#line 102
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 96
+#line 103
     testRunner.And("Response contains \'\"name\":\"Donald Duck\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 97
+#line 104
     testRunner.But("Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             }
@@ -287,7 +295,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5: Delete created user using GraphQL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 99
+#line 106
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -300,7 +308,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 5
   this.FeatureBackground();
 #line hidden
-#line 100
+#line 107
     testRunner.When("I send a GQL request with body", @"      mutation{
           deleteUser(input: {
                   id: 99999
@@ -316,13 +324,13 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
           }
       }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 117
+#line 124
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 118
+#line 125
     testRunner.And("Response contains \'\"id\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 119
+#line 126
     testRunner.But("Response does not contains \'\"errors\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             }
@@ -336,7 +344,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6: Get deleted user data using GraphQL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 121
+#line 128
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -349,18 +357,18 @@ namespace CSharp_Selenium_RestSharp_BDD.Features
 #line 5
   this.FeatureBackground();
 #line hidden
-#line 122
+#line 129
     testRunner.When("I send a GQL request with body", "      query{\n          user(id: 99999) { \n              id \n              name \n " +
                         "             email \n              gender \n              status \n          }\n    " +
                         "  }", ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 134
+#line 141
     testRunner.Then("Response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 135
+#line 142
     testRunner.And("Response contains \'\"user\":null\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 136
+#line 143
     testRunner.But("Response does not contains \'\"name\":\"Donald Duck\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             }

@@ -3,12 +3,14 @@
 Feature: GoRest GraphQL API
 
   Background:
-    Given GQL Given I set up a basic url as 'https://gorest.co.in/public/v2/graphql'
+    Given GQL I set up a basic url as 'https://gorest.co.in/public/v2/graphql'
 
   @wip
   Scenario: 1: Get user list using GraphQL
     When I send a GQL request with body
       """
+      {
+        "query":
             "query  {
                 users {
                     pageInfo {
@@ -26,34 +28,39 @@ Feature: GoRest GraphQL API
                     }
                 }
             }"
+        }
       """
     Then GQL Response code is 200
-    But Response does not contains '"errors"'
+    But GQL Response does not contains '"errors"'
 
+  @wip
   Scenario: 2: Create a new user using GraphQL
     When I send a GQL request with body
       """
-            mutation{
-                createUser(input: {
-                    name: "Default User"
-                    gender: "male"
-                    email: "default_email@gmail.com"
-                    status: "active"
-                }) 
-                {
-                    user {
-                        id 
-                        name 
-                        gender 
-                        email 
-                        status
+        {
+            "query":
+                "mutation{
+                    createUser(input: {
+                        name: \"Default User\" 
+                        gender: \"male\" 
+                        email: \"default_email@gmail.com\" 
+                        status: \"active\"
+                    }) 
+                    {
+                        user {
+                            id 
+                            name 
+                            gender 
+                            email 
+                            status
+                        }
                     }
-                }
-            }
+                }"
+        }
       """
-    Then Response code is 200
-    And Response contains '"id"'
-    But Response does not contains '"errors"'
+    Then GQL Response code is 200
+    And GQL Response contains '"id"'
+    But GQL Response does not contains '"errors"'
     And GQL I save user data
 
   Scenario: 3: Get created user data using GraphQL
