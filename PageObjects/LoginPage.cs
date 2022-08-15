@@ -9,7 +9,7 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
         private readonly String BaseUrl = "https://profile.oracle.com/";
         public LoginPage(IWebDriver _driver) : base(_driver) => PageFactory.InitElements(_driver, this);
 
-        // Elements
+        #region Elements
         [FindsBy(How = How.Id, Using = "sso_username")]
         private IWebElement UserNameField;
 
@@ -21,8 +21,9 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
 
         [FindsBy(How = How.Id, Using = "errormsg")]
         private IWebElement ErrorMessageText;
+        #endregion
 
-        // Methods
+        #region Methods
         public void OpenPage() 
         {
             _driver.Navigate().GoToUrl(BaseUrl);
@@ -48,5 +49,6 @@ namespace CSharp_Selenium_RestSharp_BDD.PageObjects
             wait.Until(ExpectedConditions.TextToBePresentInElement(ErrorMessageText, ErrorMsg));
             StringAssert.Contains(ErrorMsg, ErrorMessageText.Text, "Text assertion error.");
         }
+        #endregion
     }
 }

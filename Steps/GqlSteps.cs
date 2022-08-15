@@ -1,6 +1,6 @@
 using TechTalk.SpecFlow;
-using RestSharp;
 using KellermanSoftware.CompareNetObjects;
+using RestSharp;
 
 namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
 {

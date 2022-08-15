@@ -6,7 +6,7 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils
 {
     public class Deserializer
     {
-        public UserPoco DeserializeResponse(RestResponse restResponse)
+        public UserPoco DeserializeGQLResponse(RestResponse restResponse)
         {
             try
             {
