@@ -15,9 +15,11 @@
 - Reporting: Allure
 
 ### Installation
-1. Install [.NET](https://dotnet.microsoft.com/en-us/download)
+1. Install [.NET](https://dotnet.microsoft.com/en-us/download).
 2. Download the project.
 3. Install dependencies with a terminal command `dotnet build` in the project's root folder.
+4. Get your token for [GoRest](https://gorest.co.in/my-account/access-tokens) (You need to register/login first).
+5. In the project's root folder, paste your token into `token.json` file as a value for the `token` key.
 
 ### Running tests
 1. You can run whole test suite with `dotnet test` from the project's root folder.
