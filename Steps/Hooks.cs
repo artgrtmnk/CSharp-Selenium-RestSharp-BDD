@@ -36,12 +36,6 @@ namespace CSharp_Selenium_RestSharp_BDD.Steps
             _scenarioContext.Set(new LoginPage(driver), "LoginPage");
         }
 
-        [BeforeScenario]
-        public void BeforeFeature()
-        {
-
-        }
-
         [BeforeTestRun]
         public static void CleanAllureDirecory()
         {
