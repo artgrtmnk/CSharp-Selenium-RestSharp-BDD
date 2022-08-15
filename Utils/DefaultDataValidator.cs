@@ -10,8 +10,10 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils
         {
             if(query.Contains(DefaultEmail) || query.Contains(DefaultName))
             {
-                query = query.Replace(DefaultEmail, Faker.InternetFaker.Email())
-                            .Replace(DefaultName, Faker.NameFaker.Name());
+                query = query.Replace(DefaultEmail, userPoco.Email)
+                            .Replace(DefaultName, userPoco.Name);
+                if (query.Contains("female")) query = query.Replace("female", userPoco.Gender);
+
             }
             else if (query.Contains(DefaultId))
             {

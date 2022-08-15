@@ -1,5 +1,4 @@
 using RestSharp;
-using Newtonsoft.Json;
 
 namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
 {
@@ -22,11 +21,9 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
             return _restClient.ExecutePost(BaseSpec.AddBody(query));
         }
 
-        public void ParseUserFromResponse(RestResponse restResponse, UserPoco userPoco)
+        public UserPoco ParseUserFromResponse(RestResponse restResponse)
         {
-            var jjj = JsonConvert.DeserializeObject(restResponse.Content);
-            Console.WriteLine(jjj.ToString());
-            //return jjj.data.createUser.user;
+            return new Deserializer().DeserializeResponse(restResponse);
         }
     }
 }

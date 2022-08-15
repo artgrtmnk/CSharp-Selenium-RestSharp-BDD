@@ -1,9 +1,6 @@
 using TechTalk.SpecFlow;
-using CSharp_Selenium_RestSharp_BDD.Utils;
-using CSharp_Selenium_RestSharp_BDD.Utils.ApiClients;
 using RestSharp;
 using KellermanSoftware.CompareNetObjects;
-using CSharp_Selenium_RestSharp_BDD.Steps;
 
 namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
 {
@@ -29,13 +26,6 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
         public void WhenIsendaGQLrequestwithbody(string docString)
         {
             response = _graphqlClient.SendGqlRequest(docString, userPoco);
-            Console.WriteLine("RESPONSE BODY: "+response.Content);
-        }
-
-        [Then(@"GQL Response contains correct user info")]
-        public void ThenGQLResponsecontainscorrectuserinfo()
-        {
-            _scenarioContext.Pending();
         }
 
         [Then(@"GQL Response code is (.*)")]
@@ -56,10 +46,19 @@ namespace CSharp_Selenium_RestSharp_BDD.Utils.ApiClients
             Assert.False(response.Content.Contains(expectedContains), "Body of the response doesn't match the expected one.");
         }
 
-        [Then(@"GQL I save user data")]
-        public void ThenGQLIsaveuserdata()
+        [Then(@"GQL I save user id")]
+        public void ThenGQLIsaveuserid()
         {
-            _graphqlClient.ParseUserFromResponse(response, userPoco);
+            userPoco.Id = _graphqlClient.ParseUserFromResponse(response).Id;
+        }
+
+        [Then(@"GQL Response contains correct user info")]
+        public void ThenGQLResponsecontainscorrectuserinfo()
+        {
+            UserPoco responseUser = _graphqlClient.ParseUserFromResponse(response);
+            CompareLogic compareLogic = new CompareLogic();
+
+            Assert.True(compareLogic.Compare(userPoco, responseUser).AreEqual);
         }
     }
 }
