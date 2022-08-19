@@ -55,5 +55,7 @@
 - Allure report would be generated automatically. The only thing you need to do is to click on `Allure Report` button in the left nav menu.
 - **Note: Allure folder would be cleared within the next test run.**
 
+![Successful pipeline from Jenkins](Success_Jenkins_Pipeline.png)
+
 ## Post scriptum
 **_Antipattern was used in this sample framework: Test scenarios from API feature files are running sequentially, just because that's a sample. Never do it in a real project. Each test scenario should be independent and all of the pre-conditions should be done within the Given steps!_**
