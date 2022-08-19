@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    tools {dotnetsdk "dnet"}
     stages {
         stage ('Passing token') {
             steps {
@@ -10,7 +11,7 @@ pipeline {
                 }
             }
         }
-        stage ('Dependencies Installation Stage') {
+        stage ('Building Stage') {
             steps {
                 sh 'dotnet build'
             }
